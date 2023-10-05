@@ -20,7 +20,7 @@ def send_data_to_DataBase(request):
         #error raised when wrong password is provided
         # usermodel=get_user_model()
         try:
-            username=Student.objects.get(email=umail.lower()).username
+            username=User.objects.get(email=umail.lower()).username
             user1=authenticate(request,username=username,password=pword)
             if user1 is not None:
                 login(request,user1)
